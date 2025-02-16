@@ -160,6 +160,9 @@ document.querySelectorAll('.close').forEach(btn => {
 });
 
 function changeboxcolor(color){
+    const clicksfx = new Audio('cookieclickerpress.wav');
+    clicksfx.volume = soundVolume;
+    clicksfx.play();
     if (color!='rainbow'){
         box.style.animation = 'none';
         box.style.backgroundColor = `${color}`;
@@ -191,6 +194,9 @@ volumeInput.addEventListener('input', function(event){
 });
 
 function toggletransition(){
+    const clicksfx = new Audio('cookieclickerpress.wav');
+    clicksfx.volume = soundVolume;
+    clicksfx.play();
     if (transitionOn===true){
         boxtransition.innerHTML = 'Transition <span class="on-off">OFF</span>'
         boxtransitiontoggle.style.backgroundColor = '#4c4d4c';
