@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickChase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="clickamount">0 Clicks</div>
+    <div id="playarea">
+        <div id="boxarea">
+            <div id="clickbox">click</div>
+        </div>
+    </div>
+
+    <div id="buttoncontainer">
+        <div id="statsbutton">Stats</div>
+        <div id="settingbutton">Setting</div>
+        <div id="shopbutton">
+            <h1>Shop</h1>
+        </div>
+        <div id="darkbg"></div>
+    </div>
+
+    <div id="shop">
+        <div id="shoptitle">
+            <div id="shopline1" class="lines"></div>
+            <h1>Store</h1>
+            <div id="shopline2" class="lines"></div>
+        </div>
+        <div class="close"><img src="closesvg.png"></div>
+    </div>
+    
+
+    <div id="setting">
+        <div id="settingtitle">
+            <div class="lines line1"></div>
+            <h1>Settings</h1>
+            <div class="lines line2"></div>
+        </div>
+        <div class="close"><img src="closesvg.png"></div>
+
+        <div id="settingmain">
+            <div id="volumesetting">
+                <h1 id="volume">Volume </h1>
+                <h1 id="volumevaluedisplay">100%</h1>
+                <input type="range" min="0" max="100" step="0" value="100" class="slider" id="volumevalue">
+            </div>
+            <div id="colorsetting">
+                <h1 id="boxcolor">Box color: </h1>
+                <div id="rainbow" class="colorbox"></div>
+                <div id="red" class="colorbox"></div>
+                <div id="blue" class="colorbox"></div>
+                <div id="green" class="colorbox"></div>
+                <div id="yellow" class="colorbox"></div>
+                <div id="purple" class="colorbox"></div>
+                <div id="white" class="colorbox"></div>
+                <input type="color" id="customcolor" class="colorbox">
+            </div>
+            <div id="boxtransitionsetting">
+                <h1 id="boxtransition">Transition <span class="on-off">ON</span></h1>
+                <div id="boxtransitiontoggle" class="toggle"></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="stats">
+        <div id="statstitle">
+            <div class="lines line1"></div>
+            <h1>Statistics</h1>
+            <div class="lines line2"></div>
+        </div>
+        <div class="close"><img src="closesvg.png"></div>
+
+        <div id="statsmain">
+            <h1 id="currentclicks">Current clicks: <span class="statsinfo">0</span></h1>
+            <h1 id="totalclicks">Total clicks: <span class="statsinfo">0</span></h1>
+            <h1 id="totaldistance">Box total distance: <span class="statsinfo">0px</span></h1>
+            <div id="achievementtitle">
+                <h1>Achievements</h1>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
