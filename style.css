@@ -39,7 +39,6 @@ body{
     left: 50%;
     transform: translateX(-50%);
     position: relative;
-    max-height: 65vh;
 }
 
 #clickbox{
@@ -554,5 +553,11 @@ body{
         opacity: 0;
         bottom: 50px;
         transform: translateY(-30px);
+    }
+}
+
+@media screen and (max-height: 800px) {
+    #playarea {
+        max-height: 67vh;
     }
 }
