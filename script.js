@@ -96,7 +96,7 @@ function movebox(){
 
     setTimeout(() => {
         div.remove();
-    }, 1000);
+    }, 950);
 }
 
 box.addEventListener('click', movebox);

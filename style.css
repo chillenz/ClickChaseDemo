@@ -39,6 +39,7 @@ body{
     left: 50%;
     transform: translateX(-50%);
     position: relative;
+    max-height: 65vh;
 }
 
 #clickbox{
@@ -65,7 +66,7 @@ body{
     width: 500px;
     column-gap: 9vw;
     left: 50%;
-    top: 88%;
+    bottom: 5%;
     transform: translateX(-50%);
     position: absolute;
     display: flex;
@@ -508,7 +509,7 @@ body{
 }
 #achievementtitle{
     width: max-content;
-    top: 30px;
+    margin-top: 30px;
     height: 50px;
     position: relative;
     display: flex;
