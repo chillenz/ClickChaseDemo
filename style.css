@@ -444,7 +444,7 @@ body{
     flex-wrap: wrap;
     display: flex;
     width: 260px;
-    max-width: 100%;
+    max-width: 70%;
     justify-content: space-between;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -566,7 +566,7 @@ body{
 }
 
 @media screen and (max-width: 500px) {
-    #playarea {
+    #playarea, #shop, #stats, #setting {
         max-height: 63vh;
     }
     #buttoncontainer{
