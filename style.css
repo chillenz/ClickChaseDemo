@@ -177,7 +177,7 @@ body{
     font-weight: 200;
 }
 
-#setting, #stats, #shop{color: white;}
+#setting, #stats, #shop{color: white; overflow-y: scroll;}
 
 #shopbutton:hover + #darkbg{
     visibility: visible;
@@ -523,6 +523,88 @@ body{
 
 #achievementtitle h1{font-weight: 200;}
 
+#achievementmain {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: calc((50px * 5) + (clamp(0px, 5vw, 70px) * 4));
+    column-gap: clamp(0px, 5vw, 70px);
+    left: 50%;
+    row-gap: 40px;
+    position: relative;
+    transform: translateX(-50%);
+    margin-top: 50px;
+    padding-bottom: 50px; /* Add this line */
+
+}
+
+.achievements {
+    border: 2px white solid;
+    width: 50px;
+    height: 50px;
+    max-width: 8vw;
+    max-height: 8vw;
+}
+
+#shopmain{
+    width: 900px;
+    max-width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px;
+    position: relative;
+    color: #9d9c9c;
+    font-family: 'Zilla slab';
+    font-weight: 600;
+    display: flex;
+}
+
+#iteminfo{
+    width:0%;
+    height: auto;
+    display: none;
+    overflow: hidden;
+    background-color: hsl(0, 4%, 11%);
+    position: relative;
+    margin: 0px min(15% , 140px) 0px;
+    transition: width 0.3s, margin 0.3s;
+    border-radius: 5px;
+    border: none;
+}
+
+#itemscontainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 50px;
+    transition: width 0.3s;
+}
+
+.items{
+    width: 400px;
+    height: 230px;
+    border: 2px white solid;
+    max-height: 40vw;
+    max-width: 100%;
+    font-size: 17px;
+    border-radius: 5px;
+    background-color:hsl(0, 4%, 11%);
+}
+
+.itemtitle{
+    margin: 0;
+}
+
+#itemclose{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: none;
+    position: absolute;
+    max-width: 10%;
+}
 @keyframes rainbow {
     0% {
         background: hsl(0, 100%, 50%);
@@ -574,5 +656,31 @@ body{
     }
     #clickbox{
         min-width: 40px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    #iteminfo{
+        width: 100%;
+        margin: 0;
+        height: 0px;
+        transition: height 0.3s;
+        display: block;
+    }
+
+    #shopmain{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    #itemscontainer{
+        width: 100%;
+        padding-top: 50px;
+    }
+
+    .items{
+        width: 380px;
+        height: 210px;
+        transition: height 0.3s;
     }
 }

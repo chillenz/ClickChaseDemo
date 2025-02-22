@@ -37,6 +37,25 @@ const boxtransition = document.getElementById('boxtransition');
 const boxtransitiontoggle = document.getElementById('boxtransitiontoggle');
 const boxtransitionsetting = document.getElementById('boxtransitionsetting');
 let transitionOn = true;
+const achievements = document.querySelectorAll('.achievements');
+const achivementtitle = document.querySelector('#achievementtitle h1');
+const boxsize = document.getElementById('boxsize')
+const slowerbox = document.getElementById('slowerbox')
+const multiplier = document.getElementById('multiplier')
+const bordersize = document.getElementById('bordersize')
+const portal = document.getElementById('portal')
+const portalsize = document.getElementById('portalsize')
+let boxsizeinfo = false;
+let slowerboxinfo = false;
+let multiplierinfo = false;
+let bordersizeinfo = false;
+let portalinfo = false;
+let portalsizeinfo = false;
+const itemscontainer = document.getElementById('itemscontainer');
+const iteminfo = document.getElementById('iteminfo')
+const items = document.querySelectorAll('.items')
+const itemclose = document.getElementById('itemclose')
+const iteminfoname = document.getElementById('iteminfoname')
 
 
 function sleep(ms) {
@@ -213,3 +232,93 @@ function toggletransition(){
 }
 
 boxtransitionsetting.addEventListener('click', toggletransition);
+
+async function shopinfo(clickeditem){
+    iteminfo.style.border = '2px white solid';
+    if (window.innerWidth > 700){
+        iteminfo.style.display = 'block';
+        itemscontainer.style.width = '10%';
+        iteminfo.style.width = '90%';
+        items.forEach(item => {
+            item.style.height = '60px';
+            item.style.fontSize = '10px';
+        });
+    } else{
+        iteminfo.style.transition = 'transition: height 0.3s';
+        itemscontainer.style.height = 'max-content';
+        iteminfo.style.height = '500px';
+        items.forEach(item => {
+            item.style.height = '60px';
+            item.style.fontSize = '10px';
+        });
+    }
+    if (clickeditem==='boxsize'){
+        iteminfoname.innerText = 'Box Size';
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        boxsize.style.display = 'none';
+    } else if (clickeditem==='slowerbox'){
+        iteminfoname.innerText = 'Slower Box';
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        slowerbox.style.display = 'none';
+    } else if (clickeditem==='multiplier'){
+        iteminfoname.innerText = 'Multiplier';
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        multiplier.style.display = 'none';
+    } else if (clickeditem==='bordersize'){
+        iteminfoname.innerText = 'Border Size';
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        bordersize.style.display = 'none';
+    } else if (clickeditem==='portal'){
+        iteminfoname.innerText = 'Portal';
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        portal.style.display = 'none';
+    } else if (clickeditem==='portalsize'){
+        iteminfoname.innerText = 'Portal Size';
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        portalsize.style.display = 'none';
+    } else{
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        if (window.innerWidth>700){
+            itemscontainer.style.width = '100%';
+            iteminfo.style.width = '0%';
+            items.forEach(item => {
+                item.style.height = '230px';
+                item.style.fontSize = '17px';
+            });
+            await sleep(300);
+            iteminfo.style.display = 'none';
+            iteminfo.style.border = 'none';
+        } else{
+            itemscontainer.style.width = '100%';
+            iteminfo.style.height = '0px';
+            items.forEach(item => {
+                item.style.height = '210px';
+                item.style.fontSize = '17px';
+            });
+            await sleep(300)
+            iteminfo.style.border = 'none';
+        }
+    }
+}
+
+boxsize.addEventListener('click', () => shopinfo('boxsize'))
+slowerbox.addEventListener('click', () => shopinfo('slowerbox'))
+multiplier.addEventListener('click', () => shopinfo('multiplier'))
+bordersize.addEventListener('click', () => shopinfo('bordersize'))
+portal.addEventListener('click', () => shopinfo('portal'))
+portalsize.addEventListener('click', () => shopinfo('portalsize'))
+itemclose.addEventListener('click', () => shopinfo('close'))
