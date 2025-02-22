@@ -231,6 +231,12 @@ function toggletransition(){
     }
 }
 
+function setHeight() {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+}
+setHeight();
+window.addEventListener('resize', setHeight);
+
 boxtransitionsetting.addEventListener('click', toggletransition);
 
 async function shopinfo(clickeditem){
